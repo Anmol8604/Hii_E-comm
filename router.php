@@ -2,10 +2,15 @@
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $route = [
-    '/Admin/' => 'BeforeAuth@login',
+    '/Admin' => 'BeforeAuth@login',
     '/Admin/register' => 'BeforeAuth@register',
     '/Admin/completeprofile' => 'BeforeAuth@completeProfile',
-    '/Admin/home' => 'AfterAuth@index'
+    '/Admin/home' => 'AfterAuth@index',
+    '/Admin/profile' => 'AfterAuth@adminProfile',
+    '/Admin/update' => 'AfterAuth@updateProfile',
+    '/Admin/vendor' => 'AfterAuth@vendor',
+    '/Admin/forgot' => 'BeforeAuth@forgot',
+    '/Admin/reset' => 'BeforeAuth@reset'
 ];
 
 if (array_key_exists($uri, $route)) {

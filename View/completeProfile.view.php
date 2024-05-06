@@ -134,7 +134,8 @@ require_once 'partials/header.php';
                                     </div>
                                     <!-- Submit button -->
                                     <div class="mt-4 mb-8 d-flex justify-content-around">
-                                        <button style="background-color: #1cc88a;" name='complete' type="submit" class="btn btn-secondary">Complete</button>
+                                        <button onclick="complete()" type="button" class="btn btn-secondary">Complete</button>
+                                        <button style="display: none;" type="submit" id="submit"></button>
                                     </div>
                                 </form>
                             </div>
@@ -147,6 +148,7 @@ require_once 'partials/header.php';
 </main>
 
 <script>
+
     document.querySelector('.uImg').addEventListener('click', function() {
         document.getElementById('formFile').click();
     });
@@ -161,9 +163,11 @@ require_once 'partials/header.php';
         reader.readAsDataURL(file);
     });
 
-    setTimeout(() => {
-        document.getElementById('popUp').style.display = 'none';
-    }, 3000);
+    if (document.getElementById('popUp')) {
+        setTimeout(() => {
+            document.getElementById('popUp').style.display = 'none';
+        }, 3000);
+    }
 </script>
 
 <?php

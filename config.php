@@ -1,8 +1,16 @@
 <?php
 
 return [
-    "host" => "localhost",
-    "dbname" => "HiiEComm",
-    "username" => "homestead",
-    "password" => "secret"
+    "HiiEComm" => [
+        "host" => "localhost",
+        "dbname" => "HiiEComm",
+        "username" => "homestead",
+        "password" => "secret"
+    ],
+    "Public" => [
+        "host" => "localhost",
+        "dbname" => "Public",
+        "username" => "homestead",
+        "password" => "secret"
+    ]
 ];

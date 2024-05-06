@@ -11,6 +11,5 @@
     <link rel="stylesheet" href="../View/assests/font.css">
     <script src="../View/assests/jquery.js"></script>
     <script src="../View/assests/style.js"></script>
-    <script src="../View/assests/custom.js"></script>
 </head>
 <body id="page-top">

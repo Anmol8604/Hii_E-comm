@@ -5,7 +5,7 @@ if (isset($_POST['email'])) {
     require_once '../Controller/Database.php';
     $config = require '../config.php';
     
-    $user = new User($config);
+    $user = new User($config['HiiEComm']);
     $email = $_POST['email'];
     $res = $user->findByEmail($email);
     if ($res) {

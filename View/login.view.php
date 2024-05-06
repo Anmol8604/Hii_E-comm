@@ -23,9 +23,9 @@ require_once 'partials/header.php';
                                     <span id="pass" class="text-danger"></span>
                                 </div>
 
-                                <p class="text-end text-muted mb-0"><a href="forgotPassword.php" class="fw-bold text-body">Forgot Password?</a></p>
+                                <p class="text-end text-muted mb-0"><a href="/Admin/forgot" class="fw-bold text-body">Forgot Password?</a></p>
                                 <div class="d-flex flex-column mt-3 align-items-center">
-                                    <button onclick="login()" type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary">Register</button>
+                                    <button onclick="login()" type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary">Log In</button>
                                     <button style="display: none;" type="submit" id="submit"></button>
                                 </div>
                                 <p class="text-center text-muted mt-3 mb-0">Don't have an account? <a href="/Admin/register" class="fw-bold text-body"><u>SignUp here</u></a></p>
@@ -38,10 +38,6 @@ require_once 'partials/header.php';
     </div>
     </div>
 </section>
-
-<script>
-
-</script>
 
 <?php
 require_once 'partials/footer.php';

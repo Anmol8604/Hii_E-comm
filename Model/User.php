@@ -61,4 +61,30 @@ class User {
         $stmt->execute(['email' => $email]);
         return $stmt->fetch(PDO::FETCH_ASSOC)['status'];
     }
+
+    public function updateStatus($email){
+        $sql = "UPDATE users SET status = 1 WHERE email = :email";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['email' => $email]);
+    }
+
+    public function vendorCount(){
+        $sql = "SELECT COUNT(*) FROM users WHERE user_type = 2";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC)['COUNT(*)'];
+    }
+
+    public function updateToken($email, $token){
+        $sql = "UPDATE users SET token = :token WHERE email = :email";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['email' => $email, 'token' => $token]);
+    }
+
+    public function updatePassword($token, $password){
+        $sql = "UPDATE users SET password = :password, token = :token WHERE token = :token";
+        $stmt = $this->conn->prepare($sql);
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->execute(['token' => $token, 'password' => $password]);   
+    }
 }
